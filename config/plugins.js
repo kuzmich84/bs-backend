@@ -1,4 +1,4 @@
-module.exports = ({ env }) => ({
+module.exports = ({env}) => ({
   email: {
     config: {
       provider: 'nodemailer',
@@ -17,4 +17,5 @@ module.exports = ({ env }) => ({
       },
     },
   },
-});
+
+})
