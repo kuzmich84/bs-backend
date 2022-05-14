@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_seos",
+  "info": {
+    "displayName": "Seo",
+    "icon": "apple-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "MetaTitle": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "MetaDescription": {
+      "type": "text",
+      "maxLength": 155
+    },
+    "Keywords": {
+      "type": "text"
+    },
+    "PreventIndexing": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
