@@ -63,10 +63,8 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "image": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.image"
+    "avatar": {
+      "type": "string"
     }
   }
 }
