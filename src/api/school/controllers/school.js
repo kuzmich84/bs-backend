@@ -1,22 +1,22 @@
-'use strict';
+'use strict'
 
 /**
  *  school controller
  */
+const {sanitizeEntity} = require("@strapi/utils")
+const {createCoreController} = require('@strapi/strapi').factories
 
-const { createCoreController } = require('@strapi/strapi').factories;
+module.exports = createCoreController('api::school.school', ({strapi}) => ({
 
-module.exports = createCoreController('api::school.school', ({strapi})=> ({
+  async  create(ctx, next){
+    const id = ctx.state.user
+    const entry =await strapi.entityService.create('api::school.school',{
+      data: {
+        ...ctx.request.body.data,
+        owner: id,
+      },
+    })
 
-  async create(ctx) {
-    let entity;
-    ctx.request.body.owner = ctx.state.user.id
-    console.log()
-    entity = await strapi.service('api::school:school').create(ctx.request.body)
-
-    const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
-    return this.transformResponse(sanitizedEntity);
-
+    return {entry}
   }
-
-}));
+}))
