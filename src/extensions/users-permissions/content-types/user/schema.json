@@ -63,15 +63,10 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "avatar": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "city": {
+      "type": "string"
+    },
+    "avatar": {
       "type": "string"
     }
   }
