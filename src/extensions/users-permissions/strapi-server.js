@@ -12,15 +12,18 @@ module.exports = (plugin) => {
 
   /*******************************  CUSTOM CONTROLERS  ********************************/
   plugin.controllers.user.updateLoggedInUser = async (ctx) => {
+    const user = ctx.state.user
     const idUser = ctx.state.user.id
     if (!idUser) {
       return ctx.notFound
     }
     await strapi.entityService.update('plugin::users-permissions.user', idUser, {
       data: ctx.request.body.data
-    }).then((res) => {
-      ctx.response.status = 200
     })
+
+    ctx.body = await sanitizeOutput(user, ctx)
+    ctx.response.status = 200
+
   }
 
   plugin.controllers.user.me = async (ctx) => {
