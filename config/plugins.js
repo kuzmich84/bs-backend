@@ -22,7 +22,7 @@ module.exports = ({env}) => ({
     providerOptions: {
       accessKeyId: env('AWS_ACCESS_KEY_ID'),
       secretAccessKey: env('AWS_ACCESS_SECRET'),
-      endpoint: 'https://s3.storage.selcloud.ru',
+      endpoint: env('AWX_ENDPOINT'),
       apiVersion: 'latest',
       region: env('AWS_REGION'),
       params: {
@@ -31,6 +31,13 @@ module.exports = ({env}) => ({
       logger: console
     }
 
-  }
+  },
+  'users-permissions': {
+    config: {
+      jwt: {
+        expiresIn: '7d',
+      },
+    },
+  },
 
 })

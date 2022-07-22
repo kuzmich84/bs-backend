@@ -68,6 +68,21 @@
     },
     "avatar": {
       "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "about": {
+      "type": "string"
+    },
+    "vk": {
+      "type": "string"
+    },
+    "odnoklassniki": {
+      "type": "string"
     }
   }
 }
